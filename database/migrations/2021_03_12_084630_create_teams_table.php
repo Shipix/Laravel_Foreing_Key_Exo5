@@ -19,6 +19,8 @@ class CreateTeamsTable extends Migration
             $table->integer('number');
             $table->unsignedBigInteger('country_id');
             $table->foreign('country_id')->references('id')->on('countries');
+            // $table->unsignedBigInteger('player_id');
+            // $table->foreign('player_id')->references('id')->on('players');
             $table->timestamps();
         });
     }

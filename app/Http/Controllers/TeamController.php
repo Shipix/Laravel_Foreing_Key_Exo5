@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Player;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -63,8 +64,15 @@ class TeamController extends Controller
     public function show($id)
     {
         $show = Team::find($id);
-        return view("ShowTeam", compact("show"));
+        $joueur = $show->players;
+        return view("ShowTeam", compact("show", "joueur"));
     }
+
+    // public function show2($id)
+    // {
+    //     $joueur = Player::find($id);
+    //     return view("ShowTeam", compact("joueur"));
+    // }
 
     /**
      * Show the form for editing the specified resource.

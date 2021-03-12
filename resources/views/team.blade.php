@@ -1,11 +1,20 @@
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h1 class="card-title">Team</h1>
-      <h3 class="card-text">Pays:...</h3>
-      <h3 class="card-text">Ville:...</h3>
-      <h3 class="card-text">JOUEUR 5/7</h3>
-      <a href="#" class="btn btn-primary">SHOW</a>
-      <a href="#" class="btn btn-primary">EDIT</a>
+<div class="row">
+  @foreach ($teams as $team)
+    <div class="col-lg-4 mt-5">
+      <div class="card" style="width: 375px;">
+        <div class="card-body">
+          <h1 class="card-title">{{$team->name}}</h1>
+          <h3 class="card-text">Pays: {{$team->countries->country}}</h3>
+          <h3 class="card-text">Continent: {{$team->countries->continent}}</h3>
+          <h3 class="card-text">Nbr joueur max: {{$team->number}} </h3>
+          <a href="/ShowTeam/{{$team->id}}" class="btn btn-primary">SHOW</a>
+          <a href="#" class="btn btn-primary">EDIT</a>
+        </div>
+      </div>
     </div>
+    @if ($loop->iteration %3 == 0)
+      </div>
+      <div class="row">
+    @endif
+  @endforeach
 </div>

@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CountrySeeder::class,
             Gender::class,
-            Team::class,
             Role::class,
+            Team::class,
             Player::class,
         ]);
     }

@@ -44,9 +44,10 @@ class PlayerController extends Controller
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function show(Player $player)
+    public function show($id)
     {
-        //
+        $show = Player::find($id);
+        return view("ShowMembre", compact('show'));
     }
 
     /**
