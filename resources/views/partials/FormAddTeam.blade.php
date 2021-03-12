@@ -1,4 +1,15 @@
-<div class="container mt-5" action="/add-membre" method="POST" >
+@if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+      </ul>
+    </div>
+@endif
+
+
+<div class="container mt-5" action="/addTeam" method="POST" >
     @csrf
     <form>
         <div class="form-group">
