@@ -21,14 +21,13 @@ class CreatePlayersTable extends Migration
             $table->string('number');
             $table->string('mail');
             $table->string('country');
-            $table->unsignedBigInteger('gender_id');
-            $table->foreign('gender_id')->references('id')->on('genders');
+            $table->string('src');
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('roles');
             $table->unsignedBigInteger('team_id');
             $table->foreign('team_id')->references('id')->on('teams');
-            $table->unsignedBigInteger('picture_id');
-            $table->foreign('picture_id')->references('id')->on('pictures');
+            $table->unsignedBigInteger('gender_id');
+            $table->foreign('gender_id')->references('id')->on('genders');
             $table->timestamps();
         });
     }
