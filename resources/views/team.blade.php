@@ -3,7 +3,7 @@
     <div class="col-lg-4 mt-5">
       <div class="card" style="width: 375px;">
         <div class="card-body">
-          <h1 class="card-title">{{$team->name}}</h1>
+          <h1 class="card-title">{{$team->equipe}}</h1>
           <h3 class="card-text">Pays: {{$team->countries->country}}</h3>
           <h3 class="card-text">Continent: {{$team->countries->continent}}</h3>
           <h3 class="card-text">Nbr joueur max: {{$team->number}} </h3>

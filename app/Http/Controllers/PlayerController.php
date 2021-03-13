@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gender;
 use App\Models\Player;
+use App\Models\Role;
+use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PlayerController extends Controller
 {
@@ -14,7 +18,10 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $gender = Gender::all();
+        $role = Role::all();
+        $team = Team::all();
+        return view('AddMembre', compact('gender', 'role', 'team'));
     }
 
     /**
@@ -35,7 +42,33 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $store = Role::all();
+        // $store->role = $request->role;
+        // $store->save();
+
+        $store2 = Team::all();
+        // $store2->equipe = $request->equipe;
+        // $store2->save();
+        
+        $store3 = Gender::all();
+        // $store3->gender = $request->gender;
+        // $store3->save();
+
+        $store4 = new Player;
+        $store4->name = $request->name;
+        $store4->firstname = $request->firstname;
+        $store4->age = $request->age;
+        Storage::put('public/img/', $request->file('src'));
+        $store4->src = $request->file('src')->hashName();
+        $store4->number = $request->number;
+        $store4->mail = $request->mail;
+        $store4->country = $request->country;
+        $store4->role_id = $store->id;
+        $store4->team_id = $store2->id;
+        $store4->gender_id = $store3->id;
+        $store4->save();
+        return redirect()->back();
     }
 
     /**

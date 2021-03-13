@@ -15,9 +15,9 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('number');
-            $table->unsignedBigInteger('country_id');
+            $table->string('equipe');
+            $table->integer('number')->nullable();
+            $table->unsignedBigInteger('country_id')->nullable();
             $table->foreign('country_id')->references('id')->on('countries');
             // $table->unsignedBigInteger('player_id');
             // $table->foreign('player_id')->references('id')->on('players');

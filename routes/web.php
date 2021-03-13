@@ -12,9 +12,8 @@ Route::get('/editTeam/{id}', [TeamController::class, 'edit']);
 Route::post('/team-update/{id}', [TeamController::class, 'update']);
 Route::get('/team-delete/{id}', [TeamController::class, 'destroy']);
 
-Route::get('/add-membre', function () {
-    return view('AddMembre');
-});
+Route::get('/add-membre', [PlayerController::class, 'index']);
+Route::post('/add-membre', [PlayerController::class, 'store']);
 
 Route::get('/add-team', function () {
     return view('AddTeam');

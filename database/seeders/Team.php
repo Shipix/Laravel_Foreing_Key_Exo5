@@ -17,27 +17,27 @@ class Team extends Seeder
         DB::table('teams')->insert(
             [
                 [
-                    "name" => "AllBlack",
+                    "equipe" => "AllBlack",
                     "country_id" => 1,
                     "number" => 7
                 ],
                 [
-                    "name" => "WestStar",
+                    "equipe" => "WestStar",
                     "country_id" => 5,
                     "number" => 7
                 ],
                 [
-                    "name" => "Kings",
+                    "equipe" => "Kings",
                     "country_id" => 3,
                     "number" => 8
                 ],
                 [
-                    "name" => "Bucks",
+                    "equipe" => "Bucks",
                     "country_id" => 2,
                     "number" => 8
                 ],
                 [
-                    "name" => "Circle",
+                    "equipe" => "Circle",
                     "country_id" => 4,
                     "number" => 8
                 ],

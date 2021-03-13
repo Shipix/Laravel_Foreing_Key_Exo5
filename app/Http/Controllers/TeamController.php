@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\Player;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -37,21 +38,17 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-
-        $request->validate([
-            "name" => "required",
-            "city" => "required",
-            "country" => "required",
-            "number" => "required",
-        ]); 
-
+        $store2 = new Country;
+        $store2->country = $request->country;
+        $store2->continent = $request->continent;
+        $store2->save();
 
         $store = new Team;
-        $store->name = $request->name;
-        $store->city = $request->city;
-        $store->country = $request->country;
+        $store->equipe = $request->equipe;
         $store->number = $request->number;
+        $store->country_id = $store2->id;
         $store->save();
+
         return redirect()->back();
     }
 
@@ -67,12 +64,6 @@ class TeamController extends Controller
         $joueur = $show->players;
         return view("ShowTeam", compact("show", "joueur"));
     }
-
-    // public function show2($id)
-    // {
-    //     $joueur = Player::find($id);
-    //     return view("ShowTeam", compact("joueur"));
-    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -96,9 +87,9 @@ class TeamController extends Controller
     public function update(Request $request, $id)
     {
         $update = Team::find($id);
-        $update->name = $request->name;
-        $update->city = $request->city;
+        $update->equipe = $request->equipe;
         $update->country = $request->country;
+        $update->city = $request->city;
         $update->number = $request->number;
         $update->save();
         return redirect('/');
