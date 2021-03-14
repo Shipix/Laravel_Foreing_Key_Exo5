@@ -17,7 +17,8 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::all();
-        return view('home', compact('teams'));
+        $player = Player::all();
+        return view('home', compact('teams','player'));
     }
 
     /**
@@ -104,7 +105,6 @@ class TeamController extends Controller
         $update2->save();
 
         return redirect('/');
-        // $edit->countries->country
     }
 
     /**

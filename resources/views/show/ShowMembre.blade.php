@@ -11,7 +11,7 @@
             <h4 class="list-group-item">Mail: {{$show->mail}}<h4>
             <h4 class="list-group-item">Genre: {{$show->genders->gender}}<h4>
             <h4 class="list-group-item">Pays: {{$show->country}}<h4>
-            <h4 class="list-group-item">Team: {{$show->teams->name}}<h4> 
+            <h4 class="list-group-item">Team: {{$show->teams->equipe}}<h4> 
             <h4 class="list-group-item">Poste: {{$show->roles->role}}<h4>
           </ul>
           <a href="#" class="btn btn-primary">Edit</a>

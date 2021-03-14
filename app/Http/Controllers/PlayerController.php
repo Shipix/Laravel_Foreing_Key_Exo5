@@ -7,6 +7,7 @@ use App\Models\Player;
 use App\Models\Role;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class PlayerController extends Controller
@@ -42,39 +43,33 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = $request->validate([
-            "name"=>'required|min:3|max:40',
-            "firstname "=>'required|min:3|max:40',
-            "age"=>'numeric|min:18|max:99',
-            "number"=>'numeric|min:1|max:7',
-        ]);
+        // $validation = $request->validate([
+        //     "name"=>'required|min:3|max:40',
+        //     "firstname "=>'required|min:3|max:40',
+        //     "age"=>'numeric|min:18|max:99',
+        //     "number"=>'numeric|min:1|max:7',
+        // ]);
 
-        $store = Role::all();
-        // $store->role = $request->role;
-        // $store->save();
-
-        $store2 = Team::all();
-        // $store2->equipe = $request->equipe;
-        // $store2->save();
-        
-        $store3 = Gender::all();
-        // $store3->gender = $request->gender;
-        // $store3->save();
-
-        $store4 = new Player;
-        $store4->name = $request->name;
-        $store4->firstname = $request->firstname;
-        $store4->age = $request->age;
+        $nbrJoueur = count(DB::table('players')->where('team_id', $request->team_id)->get());
+        $store = new Player;
+        $store->name = $request->name;
+        $store->firstname = $request->firstname;
+        $store->age = $request->age;
         Storage::put('public/img/', $request->file('src'));
-        $store4->src = $request->file('src')->hashName();
-        $store4->number = $request->number;
-        $store4->mail = $request->mail;
-        $store4->country = $request->country;
-        $store4->role_id = $store->id;
-        $store4->team_id = $store2->id;
-        $store4->gender_id = $store3->id;
-        $store4->save();
-        return redirect()->back();
+        $store->src = $request->file('src')->hashName();
+        $store->number = $request->number;
+        $store->mail = $request->mail;
+        $store->country = $request->country;
+        $store->gender_id = $request->request->get('gender_id');
+        $store->role_id = $request->request->get('role_id');
+        $store->team_id = $request->request->get('team_id');
+
+        if ($store->teams->number > $nbrJoueur) {
+            $store->save();
+            return redirect()->back();
+        } else {
+            return redirect()->back()->with('status', "L'équipe est au complet !");;
+        }        
     }
 
     /**
@@ -95,9 +90,10 @@ class PlayerController extends Controller
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function edit(Player $player)
+    public function edit($id)
     {
-        //
+        $edit = Player::find($id);
+        return view('editMembre', compact('edit'));
     }
 
     /**
@@ -107,9 +103,10 @@ class PlayerController extends Controller
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Player $player)
+    public function update(Request $request, $id)
     {
-        //
+        $update = Player::find($id);
+        $update->name = $request->name;
     }
 
     /**

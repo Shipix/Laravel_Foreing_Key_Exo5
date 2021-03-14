@@ -7,6 +7,13 @@
         </ul>
     </div>
 @endif
+
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
 <div class="container mt-5 mb-5">
     <form action="/add-membre" method="POST" enctype="multipart/form-data">
         @csrf
@@ -36,9 +43,9 @@
         </div>
         <div class="form-group">
             <label for="genre">Genre</label>
-            <select class="form-control" id="genre">
+            <select class="form-control" id="genre" name="gender_id">
               @foreach ($gender as $item)
-                <option value="{{$item->gender}}">{{$item->gender}}</option>
+                <option value="{{$item->id}}">{{$item->gender}}</option>
               @endforeach
             </select>
         </div>
@@ -48,17 +55,19 @@
         </div>
         <div class="form-group">
             <label for="team">Team</label>
-            <select class="form-control" id="team">
+            <select class="form-control" id="team" name="team_id">
               @foreach ($team as $item)
-                <option value="{{$item->equipe}}">{{$item->equipe}}</option>
+                {{-- @if ($item->get()->count() < 6) --}}
+                  <option value="{{$item->id}}">{{$item->equipe}}</option>
+                {{-- @endif --}}
               @endforeach
             </select>
         </div>
         <div class="form-group">
             <label for="role">Role</label>
-            <select class="form-control" id="role">
+            <select class="form-control" id="role" name="role_id">
               @foreach ($role as $item)
-                <option value="{{$item->role}}">{{$item->role}}</option>
+                <option value="{{$item->id}}">{{$item->role}}</option>
               @endforeach
             </select>
         </div>
