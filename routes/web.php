@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
@@ -26,5 +27,7 @@ Route::get('/ShowTeam', function () {
 Route::get('/ShowMembre', function () {
     return view('ShowMembre');
 });
+
+Route::get('/dashboard', [Dashboard::class, 'index']);
 
 Route::get('/ShowMembre/{id}', [PlayerController::class, 'show']);

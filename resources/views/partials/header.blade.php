@@ -15,6 +15,9 @@
           <li class="nav-item">
             <a class="nav-link {{ (request()->is('add-team')) ? 'active' : '' }}" href="/add-team">Add team</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="/dashboard">Dashboard</a>
+          </li>
         </ul>
       </div>
     </div>

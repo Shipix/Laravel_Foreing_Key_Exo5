@@ -41,9 +41,6 @@ class TeamController extends Controller
     {
         $validation = $request->validate([
             "equipe"=>'required|min:5|max:40',
-            "country"=>'required|min:5|max:40',
-            "continent"=>'required|min:5|max:40',
-            "number"=>'required|integer|between:1,7',
         ]);
 
         $store2 = new Country;
