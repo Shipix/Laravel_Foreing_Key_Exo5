@@ -8,7 +8,7 @@
           <h3 class="card-text">Continent: {{$team->countries->continent}}</h3>
           <h3 class="card-text">Nbr joueur max: {{$team->number}} </h3>
           <a href="/ShowTeam/{{$team->id}}" class="btn btn-primary">SHOW</a>
-          <a href="#" class="btn btn-primary">EDIT</a>
+          <a href="/editTeam/{{$team->id}}" class="btn btn-primary">EDIT</a>
         </div>
       </div>
     </div>

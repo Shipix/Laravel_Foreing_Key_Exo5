@@ -38,6 +38,13 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        $validation = $request->validate([
+            "equipe"=>'required|min:5|max:40',
+            "country"=>'required|min:5|max:40',
+            "continent"=>'required|min:5|max:40',
+            "number"=>'required|integer|between:1,7',
+        ]);
+
         $store2 = new Country;
         $store2->country = $request->country;
         $store2->continent = $request->continent;
@@ -88,11 +95,16 @@ class TeamController extends Controller
     {
         $update = Team::find($id);
         $update->equipe = $request->equipe;
-        $update->country = $request->country;
-        $update->city = $request->city;
         $update->number = $request->number;
         $update->save();
+
+        $update2 = Country::find($id);
+        $update2->country = $request->country;
+        $update2->continent = $request->continent;
+        $update2->save();
+
         return redirect('/');
+        // $edit->countries->country
     }
 
     /**

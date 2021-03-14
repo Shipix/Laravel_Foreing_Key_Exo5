@@ -42,6 +42,12 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
+        $validation = $request->validate([
+            "name"=>'required|min:3|max:40',
+            "firstname "=>'required|min:3|max:40',
+            "age"=>'numeric|min:18|max:99',
+            "number"=>'numeric|min:1|max:7',
+        ]);
 
         $store = Role::all();
         // $store->role = $request->role;

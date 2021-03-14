@@ -1,29 +1,38 @@
+@if ($errors->any())
+    <div class="alert alert-danger container mt-5">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="container mt-5 mb-5">
     <form action="/add-membre" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
           <label for="Nom" class="form-label">Nom</label>
-          <input type="texte" class="form-control" id="nom" name="name">
+          <input type="texte" class="form-control" id="nom" name="name" value="{{old('name')}}">
         </div>
         <div class="mb-3">
             <label for="Prenom" class="form-label">Prénom</label>
-            <input type="texte" class="form-control" id="prenom" name="firstname">
+            <input type="texte" class="form-control" id="prenom" name="firstname" value="{{old('firstname')}}">
         </div>
         <div class="mb-3">
             <label for="age" class="form-label">Age</label>
-            <input type="text" class="form-control" id="age" name="age">
+            <input type="text" class="form-control" id="age" name="age" value="{{old('age')}}">
         </div>
         <div class="mb-3">
             <label for="src" class="form-label">Photo</label>
-            <input type="file" class="form-control" id="src" name="src">
+            <input type="file" class="form-control" id="src" name="src" value="{{old('src')}}">
         </div>
         <div class="mb-3">
             <label for="telephone" class="form-label">Telephone</label>
-            <input type="texte" class="form-control" id="telephone" name="number">
+            <input type="texte" class="form-control" id="telephone" name="number" value="{{old('number')}}">
         </div>
         <div class="mb-3">
             <label for="Mail" class="form-label">Mail</label>
-            <input type="text" class="form-control" id="mail" name="mail">
+            <input type="text" class="form-control" id="mail" name="mail" value="{{old('mail')}}">
         </div>
         <div class="form-group">
             <label for="genre">Genre</label>
@@ -35,7 +44,7 @@
         </div>
         <div class="form-group">
             <label for="genre">Pays</label>
-            <input type="text" class="form-control" id="mail" name="country">
+            <input type="text" class="form-control" id="mail" name="country" value="{{old('name')}}">
         </div>
         <div class="form-group">
             <label for="team">Team</label>

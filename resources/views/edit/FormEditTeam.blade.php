@@ -1,38 +1,22 @@
 <div class="container mt-5">
-    <form action="/edit-membre" method="POST">
+    <form action="/team-update/{{$edit->id}}" method="POST">
       @csrf
         <div class="form-group">
           <label for="nom">Nom de team</label>
-          <input type="texte" class="form-control" id="nom" name="name">
+          <input type="texte" class="form-control" id="nom" name="equipe" value="{{$edit->equipe}}">
         </div>
         <div class="form-group">
             <label for="pays">Pays</label>
-            <select class="form-control" id="pays" name="country">
-                <option>Belgique</option>
-              <option>France</option>
-              <option>Luxembourg</option>
-            </select>
+            <input type="texte" class="form-control" id="pays" name="country" value="{{$edit->countries->country}}">
         </div>
         <div class="form-group">
             <label for="city">Ville</label>
-            <select class="form-control" id="city" name="city">
-              <option>city 1</option>
-              <option>city 2</option>
-              <option>city 3</option>
-            </select>
+            <input type="texte" class="form-control" id="city" name="continent" value="{{$edit->countries->continent}}">
         </div>
         <div class="form-group">
             <label for="joueur">Nombres de joueurs</label>
-            <select class="form-control" id="joueur" name="player">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-            </select>
+            <input type="number" class="form-control" id="joueur" name="number" value="{{$edit->number}}">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
