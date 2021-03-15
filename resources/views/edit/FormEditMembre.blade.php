@@ -3,11 +3,11 @@
         @csrf
         <div class="mb-3">
             <label for="Nom" class="form-label">Nom</label>
-            <input type="texte" class="form-control" id="nom" name="name" value="{{$edit->name}}">
+            <input type="text" class="form-control" id="nom" name="name" value="{{$edit->name}}">
         </div>
         <div class="mb-3">
             <label for="Prenom" class="form-label">Prénom</label>
-            <input type="texte" class="form-control" id="prenom" name="firstname" value="{{$edit->firstname}}">
+            <input type="text" class="form-control" id="prenom" name="firstname" value="{{$edit->firstname}}">
         </div>
         <div class="mb-3">
             <label for="age" class="form-label">Age</label>
@@ -19,7 +19,7 @@
         </div>
         <div class="mb-3">
             <label for="telephone" class="form-label">Telephone</label>
-            <input type="texte" class="form-control" id="telephone" name="number" value="{{$edit->number}}">
+            <input type="text" class="form-control" id="telephone" name="number" value="{{$edit->number}}">
         </div>
         <div class="mb-3">
             <label for="Mail" class="form-label">Mail</label>
@@ -28,8 +28,8 @@
         <div class="form-group">
             <label for="genre">Genre</label>
             <select class="form-control" id="genre" name="gender_id">
-              @foreach ($gender as $item)
-                <option value="{{$item->gender}}">{{$item->gender}}</option>
+              @foreach ($edit as $item)
+                <option value="{{$item->id}}">{{$item->gender}}</option>
               @endforeach
             </select>
         </div>
@@ -40,15 +40,15 @@
          <div class="form-group">
             <label for="team">Team</label>
             <select class="form-control" id="team" name="team_id">
-              @foreach ($team as $item)
-                <option value="{{$item->equipe}}">{{$item->equipe}}</option>
+              @foreach ($edit as $item)
+                <option value="{{$item->id}}">{{$item->equipe}}</option>
               @endforeach
             </select>
         </div> 
         <div class="form-group">
             <label for="role">Role</label>
             <select class="form-control" id="role" name="role_id">
-              @foreach ($role as $item)
+              @foreach ($edit as $item)
                 <option value="{{$item->id}}">{{$item->role}}</option>
               @endforeach
             </select>

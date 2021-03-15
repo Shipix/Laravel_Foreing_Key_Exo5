@@ -37,7 +37,7 @@ class Player extends Seeder
                     "country" => "Canada",
                     "src" => "personne2.png",
                     "gender_id" => 1,
-                    "team_id" => 2,
+                    "team_id" => 1,
                     "role_id" => 2
                 ],
                 [
@@ -61,7 +61,7 @@ class Player extends Seeder
                     "country" => "Belgique",
                     "src" => "personne4.jpeg",
                     "gender_id" => 2,
-                    "team_id" => 4,
+                    "team_id" => 1,
                     "role_id" => 2
                 ],
                 [
@@ -85,7 +85,115 @@ class Player extends Seeder
                     "country" => "Algérie",
                     "src" => "personne6.jpeg",
                     "gender_id" => 1,
-                    "team_id" => 2,
+                    "team_id" => 1,
+                    "role_id" => 2
+                ],
+                [
+                    "name" => "Lopez",
+                    "firstname" => "David",
+                    "age" => "29",
+                    "number" => "5576979708",
+                    "mail" => "david@hotmail.com",
+                    "country" => "Italy",
+                    "src" => "personne6.jpeg",
+                    "gender_id" => 1,
+                    "team_id" => 8,
+                    "role_id" => 4
+                ],
+                [
+                    "name" => "Volt",
+                    "firstname" => "Julie",
+                    "age" => "29",
+                    "number" => "5576979708",
+                    "mail" => "julie@hotmail.com",
+                    "country" => "Pays-Bas",
+                    "src" => "personne4.jpeg",
+                    "gender_id" => 2,
+                    "team_id" => 7,
+                    "role_id" => 3
+                ],
+                [
+                    "name" => "Wesh",
+                    "firstname" => "Aurélie",
+                    "age" => "23",
+                    "number" => "5576979708",
+                    "mail" => "aurelie@hotmail.com",
+                    "country" => "Algérie",
+                    "src" => "personne4.jpeg",
+                    "gender_id" => 2,
+                    "team_id" => 8,
+                    "role_id" => 2
+                ],
+                [
+                    "name" => "Wesh",
+                    "firstname" => "Mathieux",
+                    "age" => "23",
+                    "number" => "5576979708",
+                    "mail" => "mathieux@hotmail.com",
+                    "country" => "Algérie",
+                    "src" => "personne6.jpeg",
+                    "gender_id" => 1,
+                    "team_id" => 6,
+                    "role_id" => 4
+                ],
+                [
+                    "name" => "Wesh",
+                    "firstname" => "Sylvie",
+                    "age" => "23",
+                    "number" => "5576979708",
+                    "mail" => "sylvie@hotmail.com",
+                    "country" => "Algérie",
+                    "src" => "personne4.jpeg",
+                    "gender_id" => 2,
+                    "team_id" => 8,
+                    "role_id" => 3
+                ],
+                [
+                    "name" => "Wesh",
+                    "firstname" => "Andréa",
+                    "age" => "23",
+                    "number" => "5576979708",
+                    "mail" => "andrea@hotmail.com",
+                    "country" => "Cuba",
+                    "src" => "personne6.jpeg",
+                    "gender_id" => 2,
+                    "team_id" => 1,
+                    "role_id" => 2
+                ],
+                [
+                    "name" => "Wesh",
+                    "firstname" => "Aurore",
+                    "age" => "23",
+                    "number" => "5576979708",
+                    "mail" => "aurore@hotmail.com",
+                    "country" => "Algérie",
+                    "src" => "personne4.jpeg",
+                    "gender_id" => 2,
+                    "team_id" => 1,
+                    "role_id" => 3
+                ],
+                [
+                    "name" => "Wesh",
+                    "firstname" => "Thomas",
+                    "age" => "23",
+                    "number" => "5576979708",
+                    "mail" => "thomas@hotmail.com",
+                    "country" => "Belgique",
+                    "src" => "personne6.jpeg",
+                    "gender_id" => 1,
+                    "team_id" => 8,
+                    "role_id" => 2
+                ],
+                [
+                    "name" => "Wesh",
+                    "firstname" => "Pauline",
+                    "age" => "23",
+                    "number" => "5576979708",
+                    "mail" => "pauline@hotmail.com",
+                    "country" => "Albanie",
+                    "src" => "personne4.jpeg",
+                    "gender_id" => 2,
+                    "team_id" => 1,
                     "role_id" => 2
                 ]
             ]

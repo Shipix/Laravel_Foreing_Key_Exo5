@@ -84,17 +84,17 @@
             <h1>Joueuses féminines qui ont une équipe :</h1>
             <div>
                 @foreach ($fille as $item)
-                    <h5>{{$item->name}}, genre : {{$item->gender_id}}</h5>
+                    <h5>{{$item->firstname}}</h5>
                 @endforeach
             </div>
         </div>
     </section>
     <section>
-        <div class="container mt-5 text-center">
+        <div class="container mt-5 text-center mb-5">
             <h1>Joueurs hommes qui ont une équipe :</h1>
             <div>
                 @foreach ($homme as $item)
-                    <h5>{{$item->name}}, genre : {{$item->gender_id}}</h5>
+                    <h5>{{$item->firstname}}</h5>
                 @endforeach
             </div>
         </div>

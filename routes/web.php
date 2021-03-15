@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\TeamController;
+use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,7 +18,8 @@ Route::get('/add-membre', [PlayerController::class, 'index']);
 Route::post('/add-membre', [PlayerController::class, 'store']);
 
 Route::get('/add-team', function () {
-    return view('AddTeam');
+    $teams = Team::all();
+    return view('AddTeam', compact('teams'));
 });
 
 Route::get('/ShowTeam', function () {

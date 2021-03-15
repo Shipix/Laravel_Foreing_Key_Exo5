@@ -41,6 +41,21 @@ class Team extends Seeder
                     "country_id" => 4,
                     "number" => 8
                 ],
+                [
+                    "equipe" => "Almighty",
+                    "country_id" => 2,
+                    "number" => 14
+                ],
+                [
+                    "equipe" => "White-Rangers",
+                    "country_id" => 1,
+                    "number" => 9
+                ],
+                [
+                    "equipe" => "Joueur Sans Equipe",
+                    "country_id" => 6,
+                    "number" => 100
+                ],
             ]
         );
     }

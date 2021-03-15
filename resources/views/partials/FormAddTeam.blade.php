@@ -24,7 +24,14 @@
         </div>
         <div class="form-group">
             <label for="joueur">Continent</label>
-            <input type="text" class="form-control" id="nom" name="continent" value="{{old('continent')}}">
+            <select class="form-control" id="team" name="team_id">
+                @foreach ($teams as $item)
+                    <option value="{{$item->id}}">{{$item->countries->continent}}</option>
+                @endforeach
+            </select>
+  
+
+            {{-- <input type="text" class="form-control" id="nom" name="continent" value="{{old('continent')}}"> --}}
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

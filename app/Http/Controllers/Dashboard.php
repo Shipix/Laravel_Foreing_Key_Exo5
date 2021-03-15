@@ -17,6 +17,7 @@ class Dashboard extends Controller
     public function index()
     {
         $teamHasard = DB::table('teams')
+        ->where('id', '!=', '8')
         ->inRandomOrder()
         ->limit(2)
         ->get();
@@ -34,9 +35,13 @@ class Dashboard extends Controller
         ->get();
 
         $equipeEurope = DB::table('teams')
-        ->where('country_id', '=', 'Europe')
+        ->where('country_id', '=', '1')
         ->inRandomOrder()
         ->get();
+
+        dd($equipeEurope);
+
+
 
         $fille = DB::table('players')
         ->where('gender_id', '=', '2')

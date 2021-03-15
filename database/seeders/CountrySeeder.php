@@ -35,7 +35,15 @@ class CountrySeeder extends Seeder
                 [
                     "country" => "Brésil",
                     "continent" => "Amérique du Sud"
-                ]
+                ],
+                [
+                    "country" => "",
+                    "continent" => ""
+                ],
+                [
+                    "country" => "",
+                    "continent" => "Océanie"
+                ],
             ]
         );
 

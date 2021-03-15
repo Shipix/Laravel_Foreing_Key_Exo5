@@ -68,7 +68,7 @@ class PlayerController extends Controller
             $store->save();
             return redirect()->back();
         } else {
-            return redirect()->back()->with('status', "L'équipe est au complet !");;
+            return redirect()->back()->with('status', "Impossible d'ajouter un nouveau membre, l'équipe est au complet !");;
         }        
     }
 
@@ -93,9 +93,9 @@ class PlayerController extends Controller
     public function edit($id)
     {
         $edit = Player::find($id);
-        $gender = Gender::all();
-        $role = Role::all();
-        $team = Team::all();
+        // $gender = Gender::all();
+        // $role = Role::all();
+        // $team = Team::all();
         // dd($edit);
         return view('editMembre', compact('edit', 'gender', 'role', 'team'));
     }
@@ -119,9 +119,13 @@ class PlayerController extends Controller
         $update->number = $request->number;
         $update->mail = $request->mail;
         $update->country = $request->country;
+        // $update->gender_id = $request->gender_id;
+        // $update->role_id = $request->role_id;
+        // $update->team_id = $request->team_id;
         $update->gender_id = $request->request->get('gender_id');
         $update->role_id = $request->request->get('role_id');
         $update->team_id = $request->request->get('team_id');
+        // dd($update);
         $update->save();
         return redirect()->back();
     }
