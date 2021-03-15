@@ -31,3 +31,6 @@ Route::get('/ShowMembre', function () {
 Route::get('/dashboard', [Dashboard::class, 'index']);
 
 Route::get('/ShowMembre/{id}', [PlayerController::class, 'show']);
+
+Route::get('/editMembre/{id}', [PlayerController::class, 'edit']);
+Route::post('/membre-update/{id}', [PlayerController::class, 'update']);

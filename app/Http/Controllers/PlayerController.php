@@ -93,7 +93,11 @@ class PlayerController extends Controller
     public function edit($id)
     {
         $edit = Player::find($id);
-        return view('editMembre', compact('edit'));
+        $gender = Gender::all();
+        $role = Role::all();
+        $team = Team::all();
+        // dd($edit);
+        return view('editMembre', compact('edit', 'gender', 'role', 'team'));
     }
 
     /**
@@ -107,6 +111,19 @@ class PlayerController extends Controller
     {
         $update = Player::find($id);
         $update->name = $request->name;
+        $update->firstname = $request->firstname;
+        $update->age = $request->age;
+        Storage::delete('public/img/'.$update->src); 
+        Storage::put('public/img/', $request->file('src'));
+        $update->src = $request->file('src')->hashName();
+        $update->number = $request->number;
+        $update->mail = $request->mail;
+        $update->country = $request->country;
+        $update->gender_id = $request->request->get('gender_id');
+        $update->role_id = $request->request->get('role_id');
+        $update->team_id = $request->request->get('team_id');
+        $update->save();
+        return redirect()->back();
     }
 
     /**

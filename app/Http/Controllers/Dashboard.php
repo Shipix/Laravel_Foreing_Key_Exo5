@@ -33,7 +33,26 @@ class Dashboard extends Controller
         ->limit(4)
         ->get();
 
-        return view('dashboard', compact('teamHasard', 'sansEquipe', 'avecEquipe'));
+        $equipeEurope = DB::table('teams')
+        ->where('country_id', '=', 'Europe')
+        ->inRandomOrder()
+        ->get();
+
+        $fille = DB::table('players')
+        ->where('gender_id', '=', '2')
+        ->whereNotIn('team_id', [8])
+        ->inRandomOrder()
+        ->get();
+
+        $homme = DB::table('players')
+        ->where('gender_id', '=', '1')
+        ->whereNotIn('team_id', [8])
+        ->inRandomOrder()
+        ->get();
+
+
+
+        return view('dashboard', compact('teamHasard', 'sansEquipe', 'avecEquipe', 'equipeEurope', 'fille', 'homme'));
     }
 
     /**

@@ -1,4 +1,4 @@
-<div class="container mt-5 ">
+<div class="container mt-5 mb-5">
     <div class="card" style="width: 18rem;">
         <img src="{{asset('storage/img/'.$show->src)}}" class="card-img-top" alt="...">
         <div class="card-body">
@@ -14,6 +14,6 @@
             <h4 class="list-group-item">Team: {{$show->teams->equipe}}<h4> 
             <h4 class="list-group-item">Poste: {{$show->roles->role}}<h4>
           </ul>
-          <a href="#" class="btn btn-primary">Edit</a>
+          <a href="/editMembre/{{$show->id}}" class="btn btn-primary">Edit</a>
     </div>
 </div>

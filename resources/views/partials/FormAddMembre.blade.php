@@ -57,9 +57,7 @@
             <label for="team">Team</label>
             <select class="form-control" id="team" name="team_id">
               @foreach ($team as $item)
-                {{-- @if ($item->get()->count() < 6) --}}
-                  <option value="{{$item->id}}">{{$item->equipe}}</option>
-                {{-- @endif --}}
+                <option value="{{$item->id}}">{{$item->equipe}}</option>
               @endforeach
             </select>
         </div>

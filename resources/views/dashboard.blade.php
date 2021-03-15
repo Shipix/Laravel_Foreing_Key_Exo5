@@ -53,9 +53,9 @@
         <div class="container mt-5 text-center">
             <h1>équipes d'europes :</h1>
             <div>
-                {{-- @foreach ($collection as $item)
-                    <h5></h5>
-                @endforeach --}}
+                @foreach ($equipeEurope as $item)
+                    <h5>{{$item->equipe}}</h5>
+                @endforeach
             </div>
         </div>
     </section>
@@ -83,9 +83,9 @@
         <div class="container mt-5 text-center">
             <h1>Joueuses féminines qui ont une équipe :</h1>
             <div>
-                {{-- @foreach ($collection as $item)
-                    <h5></h5>
-                @endforeach --}}
+                @foreach ($fille as $item)
+                    <h5>{{$item->name}}, genre : {{$item->gender_id}}</h5>
+                @endforeach
             </div>
         </div>
     </section>
@@ -93,9 +93,9 @@
         <div class="container mt-5 text-center">
             <h1>Joueurs hommes qui ont une équipe :</h1>
             <div>
-                {{-- @foreach ($collection as $item)
-                    <h5></h5>
-                @endforeach --}}
+                @foreach ($homme as $item)
+                    <h5>{{$item->name}}, genre : {{$item->gender_id}}</h5>
+                @endforeach
             </div>
         </div>
     </section>
